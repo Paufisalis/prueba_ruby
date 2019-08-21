@@ -36,10 +36,10 @@ end
 
 
 #opcion 3:  Imprimir en pantalla los nombres de los alumnos aprobados / Crear un método que reciba -como argumento- la nota necesaria para aprobar. Por defecto esa nota debe ser 5.0
-def name_approved
+def name_approved (approved=5)
   puts "Ingresa nota de aprobacion:"
-  nota=gets.chomp.to_i
-  default=5
+  approved=gets.chomp.to_i
+
 
   student_list = read_alum('alumnos.csv')  #recorre el array de student_list
   student_list.each do |average_list| #variable average_list
@@ -47,10 +47,11 @@ def name_approved
     average_list.each_with_index do |student, index| #{} es una interpolacion
       sum += student.to_f unless index == 0
     end
-    if sum/5>=nota
+    average =5
+    if sum/5>=approved
       puts "Alumno aprobado: #{average_list[0]}  \nNota aprobación: #{sum/5}"
     end
-
+  
   end
   end_line
 end
