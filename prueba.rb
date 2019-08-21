@@ -39,6 +39,7 @@ end
 def name_approved
   puts "Ingresa nota de aprobacion:"
   nota=gets.chomp.to_i
+  default=5
 
   student_list = read_alum('alumnos.csv')  #recorre el array de student_list
   student_list.each do |average_list| #variable average_list
@@ -49,6 +50,7 @@ def name_approved
     if sum/5>=nota
       puts "Alumno aprobado: #{average_list[0]}  \nNota aprobación: #{sum/5}"
     end
+
   end
   end_line
 end
