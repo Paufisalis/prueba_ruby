@@ -47,7 +47,7 @@ def name_approved
       sum += student.to_f unless index == 0
     end
     if sum/5>=nota
-      puts "Alumno aprobado: #{average_list[0]}  con nota: #{sum/5}"
+      puts "Alumno aprobado: #{average_list[0]}  \nNota aprobación: #{sum/5}"
     end
   end
   end_line
