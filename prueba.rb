@@ -4,6 +4,22 @@ def read_alum(file_name)
   file.close
   alum
 end
+def end_line
+  puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+end
+
+#Opción 1: visualiza en pantalla el nombre de cada alumno y el promedio de sus notas (30puntos)
+def name_average
+  student_list = read_alum('alumnos.csv')#recorre el array de student_list o lista estudiante
+  student_list.each do |average_list| #variable average_list o lista promedio
+    sum = 0
+    average_list.each_with_index do |student, index|
+      sum += student.to_f unless index == 0 #aqui para sacar el promedio paso el valor de student a float
+    end
+    puts "Nombre alumno: #{average_list[0]} \nSu promedio es: #{sum/5}" # el total de la suma lo div por el total de notas
+  end
+  end_line
+end
 
 
 
