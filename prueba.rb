@@ -70,7 +70,7 @@ while option !=4 #cuando es distinto de 4 entrega esto
   when 3
     name_approved
   when 4
-    puts 'saliste del menu'
+    puts 'Saliste del programa'
   else
     puts 'opcion no valida'
   end
