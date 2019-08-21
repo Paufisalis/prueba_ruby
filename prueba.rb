@@ -16,10 +16,23 @@ def name_average
     average_list.each_with_index do |student, index|
       sum += student.to_f unless index == 0 #aqui para sacar el promedio paso el valor de student a float
     end
-    puts "Nombre alumno: #{average_list[0]} \nSu promedio es: #{sum/5}" # el total de la suma lo div por el total de notas
+    puts "Nombre alumno: #{average_list[0]} \nSu promedio es: #{sum/5}" # el total de la suma lo div por el total de notas, A se toma como 0
   end
   end_line
 end
+
+#opcion 2:  Imprime en pantalla el nombre de cada alumno y la cantidad de inasistencias
+def absent_student
+  student_list = read_alum('alumnos.csv')
+  student_list.each do |absent_student| #itera en el array, student_list tiene una variable absent_student que seria cada array que esta adentro
+    sum = 0 #se le agrega un contador en este caso sum en cero
+    absent_student.each_with_index do |absent, index| #aqui recorro dentro de los array mas pequeños con sus dos variables absent e index
+      sum += 1 if absent == "A" #agrego la operacion suma, en cada vuelta suma 1,  si encuentra un elemento que sea "A" sume 1
+    end
+    puts "Nombre alumno: #{absent_student[0]}, Número de inasistencias: #{sum}" #aqui se muestra el Estudiante con el índice 0 que es donde están los nombres tiene "la suma" que es donde contó cada "A" o sea, cada inasistencia
+    end
+    end_line
+  end
 
 
 
